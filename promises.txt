@@ -1,0 +1,16 @@
+const myPromise = new Promise((resolve, reject) => {
+  if(condition here) {
+    resolve("Promise was fulfilled");
+  } else {
+    reject("Promise was rejected");
+  }
+});
+
+myPromise.then(result => {
+  console.log(result);
+});
+myPromise.catch(error => {
+  console.log(error):
+});
+
+

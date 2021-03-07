@@ -1,0 +1,53 @@
+const [a, b] = [1, 2, 3, 4, 5, 6];
+console.log(a, b); // 1, 2
+
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c); // 1, 2, 5
+
+//SWAPPING VALUES
+let a = 8, b = 6;
+[a, b] = [b, a]
+
+//MOVE PARTIAL SECTION
+!! ...arr MUST BE LAST IN LIST !!
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+  const [a, b, ...arr] = list;
+  return arr;
+}
+const arr = removeFirstTwo(source);
+
+//PASS OBJECT AS FUNCTION PARAMETER
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+
+const half = ({max, min}) => (max + min) / 2.0; 
+
+
+//ITERATE THROUGH ARRAY WITH TEMPLATE LITERAL
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+
+function makeList(arr) {
+   const failureItems = [];
+  for (let n = 0; n < arr.length; n++) {
+    failureItems.push(`<li class="text-warning">${arr[n]}</li>`);}
+     return failureItems;
+}
+
+const failuresList = makeList(result.failure);
+
+/ALTERNATE SOLUTION
+
+const failureItems = arr.map(item => `<li class="text-warning">${item}</li>`);
+
+//
