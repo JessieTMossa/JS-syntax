@@ -1,0 +1,60 @@
+RECURSION = function expressed in terms of itself
+
+function sum(arr, n) {
+ if (n <= 0) {
+  return 0;
+} else {
+  return sum(arr, n - 1) + arr[n - 1];
+}
+}
+
+
+--return countdown/countup to array--
+----push to count up, unshift to count down
+
+function countup(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countup(n - 1);
+    countArray.push(n);
+    return countArray;
+  }
+}
+console.log(countup(5)); // [1, 2, 3, 4, 5]
+
+
+function countdown(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countdown(n - 1);
+    countArray.unshift(n);
+    return countArray;
+  }
+}
+console.log(countdown(10)); // [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+console.log(countdown(-1)); // []
+
+--generate range of numbers---
+function rangeOfNumbers(startNum, endNum) {
+  if (endNum - startNum === 0) {
+    return [startNum];
+  } else {
+    var numbers = rangeOfNumbers(startNum, endNum - 1);
+    numbers.push(endNum);
+    return numbers;
+  }
+}
+ALT1
+function rangeOfNumbers(startNum, endNum) {
+  return startNum === endNum
+    ? [startNum]
+    : rangeOfNumbers(startNum, endNum - 1).concat(endNum);
+}
+ALT2
+function rangeOfNumbers(startNum, endNum) {
+  return startNum === endNum
+    ? [startNum]
+    : [...rangeOfNumbers(startNum, endNum - 1), endNum ];
+}

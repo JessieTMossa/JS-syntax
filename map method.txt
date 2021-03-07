@@ -1,0 +1,6 @@
+Array.prototype.map(), or simply map(), returns an array of the same length as the one it was called on. It also doesn't alter the original array, as long as its callback function doesn't.
+
+var newArr = globalArr.map(item => ({
+  key1: item["value1"],  
+  key2: item["value2"]
+  })

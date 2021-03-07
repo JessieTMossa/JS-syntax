@@ -1,0 +1,91 @@
+WHILE LOOP
+
+// Setup
+var myArray = [];
+
+var n = 5;
+while(n >= 0) {
+    myArray.push(n);
+    n--;
+}
+
+// results in myArray = [5, 4, 3, 2, 1, 0];
+
+FOR LOOP
+
+--odd number increment += 2, or decrement -= 2
+// Setup
+var myArray = [];
+
+for (var n = 1; n < 10; n += 2) {
+    myArray.push(n);
+}
+
+--iterate through array
+// Setup
+var myArr = [ 2, 3, 4, 5, 6];
+
+var total = 0;
+for (var n = 0; n < myArr.length; n++) {
+    total += myArr[n];
+}
+
+//result:
+total + myArr[0] -> 0 + 2 = 2 
+total + myArr[1] -> 2 + 3 = 5
+total + myArr[2] -> 5 + 4 = 9
+total + myArr[3] -> 9 + 5 = 14 
+total + myArr[4] -> 14 + 6 = 20
+
+--NESTED LOOPS, MULTI-DIMENSIONAL ARRAYS--
+function multiplyAll(arr) {
+  var product = 1;
+
+for (var n = 0; n < arr.length; n++) {
+  for (var u = 0; u < arr[n].length; u++) {
+    product = product * arr[n][u];
+  }
+}
+  return product;
+}
+
+multiplyAll([[1,2],[3,4],[5,6,7]]);
+
+---DO...WHILE LOOP-----
+// Setup
+var myArray = [];
+var i = 10;
+
+
+ do {
+  myArray.push(i);
+  i++;
+} while (i < 11)
+
+//result myArray = [10], code only runs once. Use this to make sure code runs at least once.
+
+--EXCLUDE ARRAYS WITH ELEMENT FILTER ARGUEMENT
+function filteredArray(arr, elem) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+  if (arr[i].indexOf(elem) == -1) {
+    newArr.push(arr[i]);
+  }
+}
+  return newArr;
+}
+
+console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
+
+//returns [] -- all arrays have the element
+
+--USERS ONLINE COUNT WITH FOR...IN-----
+function countOnline(usersObj) {
+  let count = 0;
+  for (let user in usersObj) {
+    if (usersObj[user].online === true) {
+  count++;
+    }
+  } return count;
+}
+
