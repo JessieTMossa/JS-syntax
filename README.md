@@ -1,2 +1,2 @@
 # JS-syntax
-JavaScript definitions and samples
+JavaScript definitions and sample code, primarily from freeCodeCamp.org certification curriculum
